@@ -2,8 +2,6 @@ name: Publish ED-318
 
 on:
   workflow_dispatch: {}
-  schedule:
-    - cron: '30 4 * * *'
 
 env:
     ED269_URL: https://data.geo.admin.ch/ch.bazl.einschraenkungen-drohnen/einschraenkungen-drohnen/einschraenkungen-drohnen_4326.json

@@ -5,7 +5,9 @@ on:
 
 env:
     ED269_URL: https://data.geo.admin.ch/ch.bazl.einschraenkungen-drohnen/einschraenkungen-drohnen/einschraenkungen-drohnen_4326.json
+    ED269_FILENAME: ed269_source.json
     ED318_FILENAME: ed318.json
+    ED318_SKYGUIDE_FILENAME: skyguide_ed318.json
 
 permissions:
   contents: read
@@ -49,13 +51,17 @@ jobs:
         run: ./run_locally.sh convert "${ED269_URL}" output/"${ED318_FILENAME}"
         working-directory: geospatial-utils/geospatial-utils
 
+      - name: Copy Source dataset
+        run: cp ../geospatial-utils/geospatial-utils/.cache/*.json ../geospatial-utils/geospatial-utils/output/${ED269_FILENAME}
+        working-directory: geoawareness-cis
+
       - name: Copy Skyguide dataset
-        run: cp skyguide/skyguide_ed318.json ../geospatial-utils/geospatial-utils/output/
+        run: cp skyguide/skyguide_ed318.json ../geospatial-utils/geospatial-utils/output/${ED318_SKYGUIDE_FILENAME}
         working-directory: geoawareness-cis
 
       - name: Write simple report
         run: |
-          echo "<html><h1>ED269 to ED318</h1><h2>FOCA</h2><ul><li>Source (downloaded at $(date +%Y-%m-%dT%H:%M:%S)): <a href=\"${ED269_URL}\">${ED269_URL}</a></li><li>Output (ED318): <a href=\"${ED318_FILENAME}\">${ED318_FILENAME}</a></li></ul><small>Generated with <a href=\"https://github.com/interuss/geospatial-utils\">interuss/geospatial-utils</a><hr><h2>Skyguide</h2><ul><li><a href="skyguide_ed318.json">skyguide_ed318.json</a></li></ul>" > ./output/index.html
+          echo "<html><h1>ED269 to ED318</h1><h2>FOCA</h2><ul><li>Source (ED269): <a href=\"${ED269_FILENAME}\">${ED269_FILENAME}</a></li><li>Output (ED318): <a href=\"${ED318_FILENAME}\">${ED318_FILENAME}</a></li></ul><small>Generated with <a href=\"https://github.com/interuss/geospatial-utils\">interuss/geospatial-utils</a><hr><h2>Skyguide</h2><ul><li><a href="${ED318_SKYGUIDE_FILENAME}">${ED318_SKYGUIDE_FILENAME}</a></li></ul><hr/>Last update: $(date +%Y-%m-%dT%H:%M:%S)" > ./output/index.html
         working-directory: geospatial-utils/geospatial-utils
 
       - name: Save output

@@ -107,14 +107,7 @@
                         "startDateTime": "2025-10-01T00:00:00Z",
                         "endDateTime": ""
                     }
-                ],
-                "layer": {
-                    "upper": 99999,
-                    "upperReference": "AGL",
-                    "lower": 120,
-                    "lowerReference": "AGL",
-                    "uom": "m"
-                }
+                ]
             },
             "geometry": {
                 "type": "Polygon",
@@ -173,7 +166,14 @@
                             47.3194444444
                         ]
                     ]
-                ]
+                ],
+                "layer": {
+                    "upper": 99999,
+                    "upperReference": "AGL",
+                    "lower": 120,
+                    "lowerReference": "AGL",
+                    "uom": "m"
+                }
             }
         },
         {
@@ -255,14 +255,7 @@
                         }
                     ]
                 },
-                "limitedApplicability": [],
-                "layer": {
-                    "upper": 99999,
-                    "upperReference": "AGL",
-                    "lower": 120,
-                    "lowerReference": "AGL",
-                    "uom": "m"
-                }
+                "limitedApplicability": []
             },
             "geometry": {
                 "type": "Polygon",
@@ -365,7 +358,14 @@
                             47.3636111111
                         ]
                     ]
-                ]
+                ],
+                "layer": {
+                    "upper": 99999,
+                    "upperReference": "AGL",
+                    "lower": 120,
+                    "lowerReference": "AGL",
+                    "uom": "m"
+                }
             }
         }
     ]

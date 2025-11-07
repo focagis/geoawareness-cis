@@ -104,8 +104,7 @@
                 },
                 "limitedApplicability": [
                     {
-                        "startDateTime": "2025-10-01T00:00:00Z",
-                        "endDateTime": ""
+                        "startDateTime": "2025-10-01T00:00:00Z"
                     }
                 ]
             },

@@ -24,10 +24,10 @@
     "otherGeoid": "LN02",
     "features": [
         {
-            "id": "CTRDUEB",
+            "id": "f375969d-b4f8-48b9-802a-e6b50f887989",
             "type": "Feature",
             "properties": {
-                "identifier": "f375969d-b4f8-48b9-802a-e6b50f887989",
+                "identifier": "CTRDUEB",
                 "country": "CHE",
                 "name": [
                     {

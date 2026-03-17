@@ -11,7 +11,7 @@ env:
     ED269_FILENAME: ed269_source.json
     ED318_FILENAME: ed318.json
     ED318_SKYGUIDE_FILENAME: skyguide_ed318.json
-    GEOSPATIAL_UTILS_VERSION: v0.1.0
+    GEOSPATIAL_UTILS_VERSION: v0.2.0
 
 permissions:
   contents: read

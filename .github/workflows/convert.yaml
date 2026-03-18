@@ -49,7 +49,7 @@ jobs:
           ref: ${{ env.GEOSPATIAL_UTILS_VERSION }}
 
       - name: Set permissions on file system
-        run: mkdir .cache && mkdir output && chmod -R 755 .cache && chmod -R 755 output
+        run: chmod -R 755 .cache && chmod -R 755 output
         working-directory: geospatial-utils/geospatial-utils
 
       - name: Convert FOCA ED269 to ED318
